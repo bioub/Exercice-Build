@@ -16,7 +16,7 @@ Ecrire un script de build dans le style de votre choix (synchrone, asynchrone, p
 
 ### 1 - Supprimer le dossier dist (s'il existe)
 
-Vous pouvez utiliser `del` [https://github.com/sindresorhus/del]()
+Vous pouvez utiliser `del` [https://github.com/sindresorhus/del](https://github.com/sindresorhus/del) ou la méthode `remove` de `fs-extra`
 
 ### 2 - Créer le dossier dist
 
@@ -35,7 +35,7 @@ Indication : readFile retourne un type `Buffer`, pour le convertir en `string` :
 
 ### 5 - Minifier le JS (Optionnel)
 
-Utiliser la bibliothèque uglify-es pour réduire le poids du fichier js de prod : [https://www.npmjs.com/package/uglify-es#api-reference]()
+Utiliser la bibliothèque uglify-es pour réduire le poids du fichier js de prod : [https://www.npmjs.com/package/uglify-es#api-reference](https://www.npmjs.com/package/uglify-es#api-reference)
 
 ### 5 - Renommer le fichier JS (Optionnel)
 
