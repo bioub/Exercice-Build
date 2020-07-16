@@ -46,7 +46,7 @@ Utiliser la bibliothèque uglify-es pour réduire le poids du fichier js de prod
 Utiliser le module md5 pour signer le fichier `app.js` et remplacer son nom par le checksum md5 (pour invalider le cache), exemple : `app.5da8aa7126701c9840f99f8e9fa54976.js`
 
 
-### 7 - Ajouter des options
+### 7 - Ajouter des options (Optionnel)
 
 Utiliser yargs ou minimist pour qu'on puisse lancer la commande avec les options suivantes :
 
