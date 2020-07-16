@@ -14,6 +14,10 @@ Ecrire un script de build dans le style de votre choix (synchrone, asynchrone, p
 
 ## Etapes
 
+### 0 - Mettre à jour les dépendances avec npm
+
+Utiliser `npm outdated`,  `npm update`,  `npm install` pour mettre à jour les dépendances.
+
 ### 1 - Supprimer le dossier dist (s'il existe)
 
 Vous pouvez utiliser `del` [https://github.com/sindresorhus/del](https://github.com/sindresorhus/del) ou la méthode `remove` de `fs-extra`
