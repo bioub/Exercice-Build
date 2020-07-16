@@ -20,7 +20,7 @@ Utiliser `npm outdated`,  `npm update`,  `npm install` pour mettre à jour les d
 
 ### 1 - Supprimer le dossier dist (s'il existe)
 
-Vous pouvez utiliser `del` [https://github.com/sindresorhus/del](https://github.com/sindresorhus/del) ou la méthode `remove` de `fs-extra`
+Vous pouvez utiliser `del` [https://github.com/sindresorhus/del](https://github.com/sindresorhus/del) ou la méthode `remove` de `fs-extra`, dans les 2 cas il n'y aura pas d'erreur si le dossier dist n'existe pas (pas besoin de tester qu'il existe)
 
 ### 2 - Créer le dossier dist
 
