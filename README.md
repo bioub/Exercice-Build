@@ -41,6 +41,16 @@ Indication : readFile retourne un type `Buffer`, pour le convertir en `string` :
 
 Utiliser la bibliothèque uglify-es pour réduire le poids du fichier js de prod : [https://www.npmjs.com/package/uglify-es#api-reference](https://www.npmjs.com/package/uglify-es#api-reference)
 
-### 5 - Renommer le fichier JS (Optionnel)
+### 6 - Renommer le fichier JS (Optionnel)
 
 Utiliser le module md5 pour signer le fichier `app.js` et remplacer son nom par le checksum md5 (pour invalider le cache), exemple : `app.5da8aa7126701c9840f99f8e9fa54976.js`
+
+
+### 7 - Ajouter des options
+
+Utiliser yargs ou minimist pour qu'on puisse lancer la commande avec les options suivantes :
+
+* `--minify` pour minifier le JS ou non
+* `--hash` pour ajouter le checksum dans le nom du fichier ou non
+
+Exemple : `node build --minify --hash`
