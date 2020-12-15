@@ -16,7 +16,9 @@ Ecrire un script de build dans le style de votre choix (synchrone, asynchrone, p
 
 ### 0 - Mettre à jour les dépendances avec npm
 
-Utiliser `npm outdated` pour connaître les bibliothèques ayant besoin d'être mises à jour parmi `del`, `fs-extra`, `http-server`, `md5` `uglify-es`.
+Utiliser `npm audit` pour connaître les dépendances directes ou indirectes dont une version contient une faille de sécurité connue.
+
+Utiliser `npm outdated` pour connaître les dépendances ayant besoin d'être mises à jour parmi nos dépendances directes : `del`, `fs-extra`, `http-server`, `md5` `uglify-es`.
 
 Mettre à jour vers la version `WANTED` en utilisant `npm update`.
 
