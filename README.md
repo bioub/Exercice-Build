@@ -22,15 +22,15 @@ Utiliser `npm outdated` pour connaître les dépendances ayant besoin d'être mi
 
 Mettre à jour vers la version `WANTED` en utilisant `npm update`.
 
-Supprimer la bibliothèque `del` avec la commande `npm rm`, pour afficher l'aide `npm rm --help`.
+Supprimer la bibliothèque `del` avec la commande `npm rm`, pour afficher l'aide `npm rm --help`. Supprimer ensuite le `require` de `del` dans le fichier `build.js`
 
-Remplacer `uglify-es` par `terser`.
+Remplacer `uglify-es` par `terser` (attention à l'installer dans les `devDependencies`. Remplacer le `require` de `uglify-es` par `const Terser = require('terser');`
 
 Migrer les dépendances restantes via `npm install`.
 
 ### 1 - Supprimer le dossier dist (s'il existe)
 
-Vous pouvez utiliser `del` [https://github.com/sindresorhus/del](https://github.com/sindresorhus/del) ou la méthode `remove` de `fs-extra`, dans les 2 cas il n'y aura pas d'erreur si le dossier dist n'existe pas (pas besoin de tester qu'il existe)
+Vous pouvez utiliser la méthode `remove` de `fs-extra` (pas besoin de tester qu'il existe, `remove` ne génèrant pas d'erreur lorsque le dossier/fichier n'existe pas)
 
 ### 2 - Créer le dossier dist
 
@@ -40,7 +40,6 @@ Vous pouvez utiliser la méthode `mkdir` de `fs-extra`
 
 Copier le contenu des fichiers `src/js/horloge.js` et `src/js/index.js` dans un fichier `dist/app.js`, dans cet ordre.
 
-
 ### 4 - Builder le HTML
 
 Copier le fichier `src/index.html` dans `dist/index.html` en remplaçant les balises script de dev par celle de prod (`app.js`).
@@ -49,16 +48,15 @@ Indication : readFile retourne un type `Buffer`, pour le convertir en `string` :
 
 ### 5 - Minifier le JS (Optionnel)
 
-Utiliser la bibliothèque uglify-es pour réduire le poids du fichier js de prod : [https://www.npmjs.com/package/uglify-es#api-reference](https://www.npmjs.com/package/uglify-es#api-reference)
+Utiliser la bibliothèque `terser` pour réduire le poids du fichier js de prod : [https://www.npmjs.com/package/terser#api-reference](https://www.npmjs.com/package/terser#api-reference)
 
 ### 6 - Renommer le fichier JS (Optionnel)
 
 Utiliser le module md5 pour signer le fichier `app.js` et remplacer son nom par le checksum md5 (pour invalider le cache), exemple : `app.5da8aa7126701c9840f99f8e9fa54976.js`
 
-
 ### 7 - Ajouter des options (Optionnel)
 
-Utiliser yargs ou minimist pour qu'on puisse lancer la commande avec les options suivantes :
+Installer et utiliser `yargs` ou `minimist` pour qu'on puisse lancer la commande avec les options suivantes :
 
 * `--minify` pour minifier le JS ou non
 * `--hash` pour ajouter le checksum dans le nom du fichier ou non
