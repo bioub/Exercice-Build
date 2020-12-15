@@ -24,7 +24,7 @@ Mettre à jour vers la version `WANTED` en utilisant `npm update`.
 
 Supprimer la bibliothèque `del` avec la commande `npm rm`, pour afficher l'aide `npm rm --help`. Supprimer ensuite le `require` de `del` dans le fichier `build.js`
 
-Remplacer `uglify-es` par `terser` (attention à l'installer dans les `devDependencies`. Remplacer le `require` de `uglify-es` par `const Terser = require('terser');`
+Remplacer `uglify-es` par `terser` (attention à l'installer dans les `devDependencies`. Remplacer le `require` de `uglify-es` par `const { minify } = require("terser");`
 
 Migrer les dépendances restantes via `npm install`.
 
