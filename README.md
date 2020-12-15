@@ -16,7 +16,15 @@ Ecrire un script de build dans le style de votre choix (synchrone, asynchrone, p
 
 ### 0 - Mettre à jour les dépendances avec npm
 
-Utiliser `npm outdated`,  `npm update`,  `npm install` pour mettre à jour les dépendances.
+Utiliser `npm outdated` pour connaître les bibliothèques ayant besoin d'être mises à jour parmi `del`, `fs-extra`, `http-server`, `md5` `uglify-es`.
+
+Mettre à jour vers la version `WANTED` en utilisant `npm update`.
+
+Supprimer la bibliothèque `del` avec la commande `npm rm`, pour afficher l'aide `npm rm --help`.
+
+Remplacer `uglify-es` par `terser`.
+
+Migrer les dépendances restantes via `npm install`.
 
 ### 1 - Supprimer le dossier dist (s'il existe)
 
