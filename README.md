@@ -24,17 +24,19 @@ Mettre à jour vers la version `WANTED` en utilisant `npm update`.
 
 Supprimer la bibliothèque `del` avec la commande `npm rm`, pour afficher l'aide `npm rm --help`. Supprimer ensuite le `require` de `del` dans le fichier `build.js`
 
+Supprimer la bibliothèque `fs-extra` avec la commande `npm rm`, remplacer ensuite le `require` de `fs-extra` par `require('fs/promises')`
+
 Remplacer `uglify-es` par `terser` (attention à l'installer dans les `devDependencies`. Remplacer le `require` de `uglify-es` par `const { minify } = require("terser");`
 
 Migrer les dépendances restantes via `npm install`.
 
 ### 1 - Supprimer le dossier dist (s'il existe)
 
-Vous pouvez utiliser la méthode `remove` de `fs-extra` (pas besoin de tester qu'il existe, `remove` ne génèrant pas d'erreur lorsque le dossier/fichier n'existe pas)
+Vous pouvez utiliser la méthode `rm` de `fs/promises` avec les options `force` et `recursive` (pas besoin de tester qu'il existe, `rm` ne génèrant pas d'erreur lorsque le dossier/fichier n'existe pas)
 
 ### 2 - Créer le dossier dist
 
-Vous pouvez utiliser la méthode `mkdir` de `fs-extra`
+Vous pouvez utiliser la méthode `mkdir` de `fs/promises`
 
 ### 3 - Builder le JS
 
