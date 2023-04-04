@@ -30,6 +30,24 @@ Remplacer `uglify-es` par `terser` (attention à l'installer dans les `devDepend
 
 Migrer les dépendances restantes via `npm install`.
 
+### 0 - Mettre à jour les dépendances avec Yarn
+
+Migrer le `package-lock.json` en `yarn.lock` avec `yarn import`
+
+Utiliser `yarn audit` pour connaître les dépendances directes ou indirectes dont une version contient une faille de sécurité connue.
+
+Utiliser `yarn outdated` pour connaître les dépendances ayant besoin d'être mises à jour parmi nos dépendances directes : `del`, `fs-extra`, `http-server`, `md5` `uglify-es`.
+
+Mettre à jour vers la version `WANTED` en utilisant `yarn upgrade` ou  `yarn upgrade-interactive`.
+
+Supprimer la bibliothèque `del` avec la commande `yarn remove`, pour afficher l'aide `npm rm --help`. Supprimer ensuite le `require` de `del` dans le fichier `build.js`
+
+Supprimer la bibliothèque `fs-extra` avec la commande `yarn remove`, remplacer ensuite le `require` de `fs-extra` par `require('fs/promises')`
+
+Remplacer `uglify-es` par `terser` (attention à l'installer dans les `devDependencies`. Remplacer le `require` de `uglify-es` par `const { minify } = require("terser");`
+
+Migrer les dépendances restantes via `yarn add [package]`.
+
 ### 1 - Supprimer le dossier dist (s'il existe)
 
 Vous pouvez utiliser la méthode `rm` de `fs/promises` avec les options `force` et `recursive` (pas besoin de tester qu'il existe, `rm` ne génèrant pas d'erreur lorsque le dossier/fichier n'existe pas)
