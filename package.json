@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "devDependencies": {
     "del": "^3.0.0",
     "fs-extra": "^4.0.2",

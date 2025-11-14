@@ -1,11 +1,11 @@
-const fs = require('fs-extra');
-const path = require('path');
-const del = require('del');
-const md5 = require('md5');
-const UglifyJS = require('uglify-es');
+import fs from 'fs-extra';
+import path from 'node:path';
+import del from 'del';
+import md5 from 'md5';
+import UglifyJS from 'uglify-es';
 
-const distPath = path.resolve(__dirname, 'dist');
-const srcPath = path.resolve(__dirname, 'src');
+const distPath = path.resolve(import.meta.dirname, 'dist');
+const srcPath = path.resolve(import.meta.dirname, 'src');
 const horlogeJsPath = path.resolve(srcPath, 'js', 'horloge.js');
 const indexJsPath = path.resolve(srcPath, 'js', 'index.js');
 const indexHtmlPath = path.resolve(srcPath, 'index.html');
